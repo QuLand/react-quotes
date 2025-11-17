@@ -17,7 +17,7 @@ function App() {
       setQuote(data.quote);
     } catch (error) {
       console.error("Alarm");
-      setQuote("Ошибка загрузки цитаты."); // Обновляем стейт с ошибкой
+      setQuote("Ошибка загрузки цитаты.");
     } finally {
       setIsLoading(false);
     }
@@ -31,11 +31,7 @@ function App() {
     <article>
       <h2>Цитаты Канье Уэста</h2>
       <blockquote>{quote}</blockquote>
-      <button
-        onClick={fetchQuote}
-        disabled={isLoading}
-        // Здесь вешаешь onClick и управляешь disabled
-      >
+      <button onClick={fetchQuote} disabled={isLoading}>
         {isLoading ? "Загрузка..." : "Получить новую цитату"}
       </button>
     </article>
